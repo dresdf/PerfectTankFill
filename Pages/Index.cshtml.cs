@@ -30,6 +30,7 @@ namespace PerfectTankFill.Pages
         {
             UnitPrice = null;
             MaxTank = null;
+            Result = "N / A";
         }
         public void OnPost()
         {
@@ -41,7 +42,8 @@ namespace PerfectTankFill.Pages
                 {
                     if(i % 5 == 0)
                     {
-                        Result = "Price: " + Price + " /// Quantity: " + i;
+                        //Result = "Price: " + Price + " /// Quantity: " + i;
+                        Result = i + " liters, at a cost of " + Price + " money.";
                         return;
                     }
                 }
@@ -54,7 +56,8 @@ namespace PerfectTankFill.Pages
                 {
                     if(i % 5 == 0)
                     {
-                        Result = "First Price: " + Price + " /// Quantity: " + i;
+                        //Result = "First Price: " + Price + " /// Quantity: " + i;
+                        Result = "No acceptable pair. First match is " + i + " liters, at a cost of " + Price + " money";
                         return;
                     }
                 }

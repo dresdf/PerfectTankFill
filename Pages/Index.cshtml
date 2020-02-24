@@ -3,13 +3,21 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
-    <form method="post">
+<div class="alert alert-primary" role="alert">
+    <b>Perfect Tank:</b>  @Model.Result
+</div>
+<br />
+<form method="post">
+    <div class="form-group">
         <label for="price">Price:</label>
-        <input id="price" type="number" step="0.01" asp-for="@Model.UnitPrice">
+        <input id="price" type="number" step="0.01" asp-for="@Model.UnitPrice" class="form-control" required>
+    </div>
+    <div class="form-group">
         <label for="maxTank">Max Tank:</label>
-        <input id="maxTank" type="number" asp-for="@Model.MaxTank">
-        <input type="submit">
-    </form>
+        <input id="maxTank" type="number" asp-for="@Model.MaxTank" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
 
-<p>Text input is: @Model.Result</p>
+
+
